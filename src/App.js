@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import UserProfile from './UserProfile';
+import profilesData from './profilesData';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h3 className="text-center" style={{ marginBottom: '30px', fontWeight: 600 }}>
+        Engineering Team
+      </h3>
+      <div className="row">
+        {profilesData.map((profile, index) => (
+          <UserProfile
+            key={index}
+            name={profile.name}
+            role={profile.role}
+            bio={profile.bio}
+            avatar={profile.avatar}
+          />
+        ))}
+      </div>
     </div>
   );
 }
