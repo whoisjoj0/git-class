@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import UserProfile from './UserProfile';
+import ProfileColumn from './ProfileColumn';
 import profilesData from './profilesData';
 
 function App() {
@@ -11,13 +11,7 @@ function App() {
       </h3>
       <div className="row">
         {profilesData.map((profile, index) => (
-          <UserProfile
-            key={index}
-            name={profile.name}
-            role={profile.role}
-            bio={profile.bio}
-            avatar={profile.avatar}
-          />
+          <ProfileColumn key={index} profile={profile} />
         ))}
       </div>
     </div>
